@@ -31,7 +31,7 @@ public class CompanyCustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public CustomerEntity getCustomerById(Integer id) {
+    public CustomerDto getCustomerById(Integer id) {
         return null;
     }
 }

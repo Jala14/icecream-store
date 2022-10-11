@@ -1,6 +1,7 @@
 package com.matrix.example.demo.controller.customer;
 
 import com.matrix.example.demo.dao.entity.CustomerEntity;
+import com.matrix.example.demo.model.CustomerDto;
 import com.matrix.example.demo.service.CustomerService;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
@@ -50,5 +51,12 @@ public class RetailCustomerController {
     @GetMapping("/search")
     public List<CustomerEntity> getCustomer(@RequestParam(required = false) String firstName) {
         return customerService.findAll(firstName);
+    }
+
+    @GetMapping("/{customerId}")
+    public CustomerDto editCustomer(
+            @PathVariable Integer customerId
+    ) {
+        return customerService.getCustomerById(customerId);
     }
 }

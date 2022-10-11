@@ -2,6 +2,8 @@ package com.matrix.example.demo.service.customer;
 
 import com.matrix.example.demo.dao.entity.CustomerEntity;
 import com.matrix.example.demo.dao.repository.CustomerRepository;
+import com.matrix.example.demo.mapper.CustomerMapper;
+import com.matrix.example.demo.model.CustomerDto;
 import com.matrix.example.demo.service.CustomerService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -41,7 +43,8 @@ public class RetailCustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public CustomerEntity getCustomerById(Integer id) {
-        return customerRepository.findById(id).get();
+    public CustomerDto getCustomerById(Integer id) {
+        var entity = customerRepository.findById(id).get();
+        return CustomerMapper.INSTANCE.mapToDto(entity);
     }
 }
