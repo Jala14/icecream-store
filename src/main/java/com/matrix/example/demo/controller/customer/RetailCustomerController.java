@@ -52,4 +52,11 @@ public class RetailCustomerController {
     public List<CustomerEntity> getCustomer(@RequestParam(required = false) String firstName) {
         return customerService.findAll(firstName);
     }
+
+    @GetMapping("/{customerId}")
+    public CustomerDto editCustomer(
+            @PathVariable Integer customerId
+    ) {
+        return customerService.getCustomerById(customerId);
+    }
 }

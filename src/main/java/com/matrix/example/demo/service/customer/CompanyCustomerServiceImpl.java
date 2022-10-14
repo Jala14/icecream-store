@@ -29,4 +29,9 @@ public class CompanyCustomerServiceImpl implements CustomerService {
     public List<CustomerEntity> findAll(String firstName) {
         return null;
     }
+
+    @Override
+    public CustomerDto getCustomerById(Integer id) {
+        return null;
+    }
 }
