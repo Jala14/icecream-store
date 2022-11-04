@@ -16,7 +16,7 @@ public class ContactService {
     }
 
     public boolean saveContact(ContactDto contactDto) {
-        contactRepository.save(contactMapper.contactEntity(contactDto));
+        contactRepository.save(contactMapper.contactEntityDto(contactDto));
         return true;
     }
 }

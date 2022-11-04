@@ -10,6 +10,16 @@ public class ContactDto {
     private String subject;
     private String message;
 
+    public ContactDto() {
+    }
+
+    public ContactDto(String name, String email, String subject, String message) {
+        this.name = name;
+        this.email = email;
+        this.subject = subject;
+        this.message = message;
+    }
+
     public String getName() {
         return name;
     }
@@ -40,15 +50,5 @@ public class ContactDto {
 
     public void setMessage(String message) {
         this.message = message;
-    }
-
-    public ContactDto(String name, String email, String subject, String message) {
-        this.name = name;
-        this.email = email;
-        this.subject = subject;
-        this.message = message;
-    }
-
-    public ContactDto() {
     }
 }

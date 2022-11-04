@@ -7,8 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
-@RequestMapping
+@RestController
+@RequestMapping("/contact")
 public class ContactController {
     private final ContactService contactService;
 
@@ -16,12 +16,7 @@ public class ContactController {
         this.contactService = contactService;
     }
 
-    @GetMapping("/savecontact")
-    public  String saveContact(Model model){
-        return "contact";
-    }
-
-    @PostMapping("/savecontact")
+    @PostMapping("/")
     public void saveContact(@RequestBody ContactDto contactDto) {
         contactService.saveContact(contactDto);
     }

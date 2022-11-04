@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/products")
 public class ProductController {
     private final ProductService productService;
 
@@ -21,5 +20,10 @@ public class ProductController {
         model.addAttribute("products", productService.getProducts());
 
         return "product";
+    }
+    @GetMapping("/contact")
+    public String contact() {
+        return "contact";
+
     }
 }

@@ -8,11 +8,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class ContactMapper {
 
-    public ContactEntity contactEntity(ContactDto contactDto) {
-        return  new ContactEntity(contactDto.getName(),
+    public ContactEntity contactEntityDto(ContactDto contactDto) {
+        return new ContactEntity(
+
+                contactDto.getName(),
                 contactDto.getEmail(),
                 contactDto.getSubject(),
-                contactDto.getMessage()) {
-        };
+                contactDto.getMessage()
+        );
     }
 }

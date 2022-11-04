@@ -5,17 +5,17 @@ package com.matrix.example.demo.dao.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "contact1")
+@Table(name = "contact")
 public class ContactEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "name")
-    private String yourName;
+    private String name;
 
     @Column(name = "email")
-    private String yourEmail;
+    private String email;
 
     @Column(name = "subject")
     private String subject;
@@ -23,51 +23,52 @@ public class ContactEntity {
     @Column(name = "message")
     private String message;
 
-
-    public ContactEntity( String yourName, String yourEmail, String subject, String message) {
-        this.yourName = yourName;
-        this.yourEmail = yourEmail;
+    public ContactEntity( String name,  String email, String subject, String message) {
+        this.name = name;
+        this.email = email;
         this.subject = subject;
         this.message = message;
     }
 
     public ContactEntity() {
+
     }
 
     public Integer getId() {
         return id;
     }
 
-    public String getYourName() {
-        return yourName;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getYourEmail() {
-        return yourEmail;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getSubject() {
         return subject;
     }
 
-    public String getMessage() {
-        return message;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public void setYourName(String yourName) {
-        this.yourName = yourName;
-    }
-
-    public void setYourEmail(String yourEmail) {
-        this.yourEmail = yourEmail;
-    }
-
     public void setSubject(String subject) {
         this.subject = subject;
+    }
+
+    public String getMessage() {
+        return message;
     }
 
     public void setMessage(String message) {
@@ -78,12 +79,11 @@ public class ContactEntity {
     public String toString() {
         return "ContactEntity{" +
                 "id=" + id +
-                ", yourName='" + yourName + '\'' +
-                ", yourEmail='" + yourEmail + '\'' +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
                 ", subject='" + subject + '\'' +
                 ", message='" + message + '\'' +
                 '}';
     }
 }
-
 
