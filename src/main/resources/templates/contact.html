@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
@@ -112,41 +112,40 @@
 
     <!-- Contact Start -->
     <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <h1 class="section-title position-relative text-center mb-5">Contact Us For Any Query</h1>
-                </div>
+        <div class="contact100-form validate-form">
+				<span class="contact100-form-title">
+					Send Us A Message
+				</span>
+
+            <label class="label-input100" for="first-name">Tell us your name *</label>
+            <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Type first name">
+                <input id="first-name" class="input100" type="text" name="first-name" placeholder="First name" autocomplete="off">
+                <span class="focus-input100"></span>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-9">
-                    <div class="contact-form bg-light rounded p-5">
-                        <div id="success"></div>
-                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
-                            <div class="form-row">
-                                <div class="col-sm-6 control-group">
-                                    <input type="text" class="form-control p-4" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="col-sm-6 control-group">
-                                    <input type="email" class="form-control p-4" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <input type="text" class="form-control p-4" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="control-group">
-                                <textarea class="form-control p-4" rows="6" id="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div>
-                                <button class="btn btn-primary btn-block py-3 px-5" type="submit" id="sendMessageButton">Send Message</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+
+
+            <label class="label-input100" for="email">Enter your email *</label>
+            <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                <input id="email" class="input100" type="text" name="email" placeholder="Eg. example@email.com" autocomplete="off">
+                <span class="focus-input100"></span>
+            </div>
+
+            <label class="label-input100" for="subject">Enter subject </label>
+            <div class="wrap-input100">
+                <input id="subject" class="input100" type="text" name="subject"  autocomplete="off">
+                <span class="focus-input100"></span>
+            </div>
+
+            <label class="label-input100" for="message">Message *</label>
+            <div class="wrap-input100 validate-input" data-validate="Message is required">
+                <textarea id="message" class="input100" name="message" placeholder="Write us a message"></textarea>
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="container-contact100-form-btn" id="contactButton">
+                <button class="contact100-form-btn">
+                    Send Message
+                </button>
             </div>
         </div>
     </div>
@@ -211,6 +210,36 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+<script >
+    $(document).ready(function () {
+        $('#contactButton').click(function () {
+            let name = $('#first-name').val()
+            let email = $('#email').val()
+            let subject = $('#subject').val()
+            let message = $('#message').val()
+
+            var data = {}
+            data.name =name
+            data.email = email
+            data.subject = subject
+            data.message = message
+
+            console.log(data)
+            $.ajax(
+                {
+                    url: '/savecontact/',
+                    type: 'POST', // http method
+                    data: JSON.stringify(data),  // data to submit
+                    dataType: 'json',
+                    contentType: "application/json"
+
+                });
+            alert("Your message was sent!");
+        });
+
+    })
+
+</script>
 </body>
 
 </html>
