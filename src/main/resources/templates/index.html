@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
@@ -77,7 +77,7 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <a th:href="@{/index}" class="nav-item nav-link active">Home</a>
                         <a href="about.html" class="nav-item nav-link">About</a>
                         <a href="product.html" class="nav-item nav-link">Product</a>
                     </div>
@@ -288,52 +288,13 @@
         <div class="row m-0 portfolio-container">
             <div class="col-lg-4 col-md-6 p-0 portfolio-item">
                 <div class="position-relative overflow-hidden">
-                    <img class="img-fluid w-100" src="img/portfolio-1.jpg" alt="">
+                    <img class="img-fluid w-100" src="/img/portfolio-1.jpg" alt="">
                     <a class="portfolio-btn" href="img/portfolio-1.jpg" data-lightbox="portfolio">
                         <i class="fa fa-plus text-primary" style="font-size: 60px;"></i>
                     </a>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 p-0 portfolio-item">
-                <div class="position-relative overflow-hidden">
-                    <img class="img-fluid w-100" src="img/portfolio-2.jpg" alt="">
-                    <a class="portfolio-btn" href="img/portfolio-2.jpg" data-lightbox="portfolio">
-                        <i class="fa fa-plus text-primary" style="font-size: 60px;"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 p-0 portfolio-item">
-                <div class="position-relative overflow-hidden">
-                    <img class="img-fluid w-100" src="img/portfolio-3.jpg" alt="">
-                    <a class="portfolio-btn" href="img/portfolio-3.jpg" data-lightbox="portfolio">
-                        <i class="fa fa-plus text-primary" style="font-size: 60px;"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 p-0 portfolio-item">
-                <div class="position-relative overflow-hidden">
-                    <img class="img-fluid w-100" src="img/portfolio-4.jpg" alt="">
-                    <a class="portfolio-btn" href="img/portfolio-4.jpg" data-lightbox="portfolio">
-                        <i class="fa fa-plus text-primary" style="font-size: 60px;"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 p-0 portfolio-item">
-                <div class="position-relative overflow-hidden">
-                    <img class="img-fluid w-100" src="img/portfolio-5.jpg" alt="">
-                    <a class="portfolio-btn" href="img/portfolio-5.jpg" data-lightbox="portfolio">
-                        <i class="fa fa-plus text-primary" style="font-size: 60px;"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 p-0 portfolio-item">
-                <div class="position-relative overflow-hidden">
-                    <img class="img-fluid w-100" src="img/portfolio-6.jpg" alt="">
-                    <a class="portfolio-btn" href="img/portfolio-6.jpg" data-lightbox="portfolio">
-                        <i class="fa fa-plus text-primary" style="font-size: 60px;"></i>
-                    </a>
-                </div>
-            </div>
+
         </div>
     </div>
     <!-- Portfolio End -->
@@ -350,55 +311,16 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <div class="owl-carousel product-carousel">
-                        <div class="product-item d-flex flex-column align-items-center text-center bg-light rounded py-5 px-3">
+                    <div class="owl-carousel product-carousel" >
+
+                        <div class="product-item d-flex flex-column align-items-center text-center bg-light rounded py-5 px-3"  th:each="product : ${products}" >
                             <div class="bg-primary mt-n5 py-3" style="width: 80px;">
-                                <h4 class="font-weight-bold text-white mb-0">$80</h4>
+                                <h4 class="font-weight-bold text-white mb-0" th:text="${product.currency + product.price}"></h4>
                             </div>
                             <div class="position-relative bg-primary rounded-circle mt-n3 mb-4 p-3" style="width: 150px; height: 150px;">
-                                <img class="rounded-circle w-100 h-100" src="img/product-1.jpg" style="object-fit: cover;">
+                                <img class="rounded-circle w-100 h-100" th:src="${product.image}" style="object-fit: cover;">
                             </div>
-                            <h5 class="font-weight-bold mb-4">Vanilla Ice Cream</h5>
-                            <a href="" class="btn btn-sm btn-secondary">Order Now</a>
-                        </div>
-                        <div class="product-item d-flex flex-column align-items-center text-center bg-light rounded py-5 px-3">
-                            <div class="bg-primary mt-n5 py-3" style="width: 80px;">
-                                <h4 class="font-weight-bold text-white mb-0">$99</h4>
-                            </div>
-                            <div class="position-relative bg-primary rounded-circle mt-n3 mb-4 p-3" style="width: 150px; height: 150px;">
-                                <img class="rounded-circle w-100 h-100" src="img/product-2.jpg" style="object-fit: cover;">
-                            </div>
-                            <h5 class="font-weight-bold mb-4">Strawberry Ice Cream</h5>
-                            <a href="" class="btn btn-sm btn-secondary">Order Now</a>
-                        </div>
-                        <div class="product-item d-flex flex-column align-items-center text-center bg-light rounded py-5 px-3">
-                            <div class="bg-primary mt-n5 py-3" style="width: 80px;">
-                                <h4 class="font-weight-bold text-white mb-0">$70</h4>
-                            </div>
-                            <div class="position-relative bg-primary rounded-circle mt-n3 mb-4 p-3" style="width: 150px; height: 150px;">
-                                <img class="rounded-circle w-100 h-100" src="img/product-3.jpg" style="object-fit: cover;">
-                            </div>
-                            <h5 class="font-weight-bold mb-4">Chocolate Ice Cream</h5>
-                            <a href="" class="btn btn-sm btn-secondary">Order Now</a>
-                        </div>
-                        <div class="product-item d-flex flex-column align-items-center text-center bg-light rounded py-5 px-3">
-                            <div class="bg-primary mt-n5 py-3" style="width: 80px;">
-                                <h4 class="font-weight-bold text-white mb-0">$95</h4>
-                            </div>
-                            <div class="position-relative bg-primary rounded-circle mt-n3 mb-4 p-3" style="width: 150px; height: 150px;">
-                                <img class="rounded-circle w-100 h-100" src="img/product-4.jpg" style="object-fit: cover;">
-                            </div>
-                            <h5 class="font-weight-bold mb-4">Rainbow Ice Cream</h5>
-                            <a href="" class="btn btn-sm btn-secondary">Order Now</a>
-                        </div>
-                        <div class="product-item d-flex flex-column align-items-center text-center bg-light rounded py-5 px-3">
-                            <div class="bg-primary mt-n5 py-3" style="width: 80px;">
-                                <h4 class="font-weight-bold text-white mb-0">$110</h4>
-                            </div>
-                            <div class="position-relative bg-primary rounded-circle mt-n3 mb-4 p-3" style="width: 150px; height: 150px;">
-                                <img class="rounded-circle w-100 h-100" src="img/product-5.jpg" style="object-fit: cover;">
-                            </div>
-                            <h5 class="font-weight-bold mb-4">Coconut Ice Cream</h5>
+                            <h5 class="font-weight-bold mb-4"  th:text="${product.name}"></h5>
                             <a href="" class="btn btn-sm btn-secondary">Order Now</a>
                         </div>
                     </div>
@@ -421,55 +343,14 @@
             <div class="row">
                 <div class="col-12">
                     <div class="owl-carousel team-carousel">
-                        <div class="team-item">
+
+                        <div class="team-item"  th:each="param : ${parameter}">
                             <div class="team-img mx-auto">
-                                <img class="rounded-circle w-100 h-100" src="img/team-1.jpg" style="object-fit: cover;">
+                                <img class="rounded-circle w-100 h-100" th:src="${param.chef_image}" style="object-fit: cover;">
                             </div>
                             <div class="position-relative text-center bg-light rounded px-4 py-5" style="margin-top: -100px;">
-                                <h3 class="font-weight-bold mt-5 mb-3 pt-5">Full Name</h3>
-                                <h6 class="text-uppercase text-muted mb-4">Designation</h6>
-                                <div class="d-flex justify-content-center pt-1">
-                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-item">
-                            <div class="team-img mx-auto">
-                                <img class="rounded-circle w-100 h-100" src="img/team-2.jpg" style="object-fit: cover;">
-                            </div>
-                            <div class="position-relative text-center bg-light rounded px-4 py-5" style="margin-top: -100px;">
-                                <h3 class="font-weight-bold mt-5 mb-3 pt-5">Full Name</h3>
-                                <h6 class="text-uppercase text-muted mb-4">Designation</h6>
-                                <div class="d-flex justify-content-center pt-1">
-                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-item">
-                            <div class="team-img mx-auto">
-                                <img class="rounded-circle w-100 h-100" src="img/team-3.jpg" style="object-fit: cover;">
-                            </div>
-                            <div class="position-relative text-center bg-light rounded px-4 py-5" style="margin-top: -100px;">
-                                <h3 class="font-weight-bold mt-5 mb-3 pt-5">Full Name</h3>
-                                <h6 class="text-uppercase text-muted mb-4">Designation</h6>
-                                <div class="d-flex justify-content-center pt-1">
-                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-item">
-                            <div class="team-img mx-auto">
-                                <img class="rounded-circle w-100 h-100" src="img/team-4.jpg" style="object-fit: cover;">
-                            </div>
-                            <div class="position-relative text-center bg-light rounded px-4 py-5" style="margin-top: -100px;">
-                                <h3 class="font-weight-bold mt-5 mb-3 pt-5">Full Name</h3>
-                                <h6 class="text-uppercase text-muted mb-4">Designation</h6>
+                                <h3 class="font-weight-bold mt-5 mb-3 pt-5" th:text="${param.chef_name}"></h3>
+                                <h6 class="text-uppercase text-muted mb-4"  th:text="${param.designation}"></h6>
                                 <div class="d-flex justify-content-center pt-1">
                                     <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
                                     <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
@@ -496,25 +377,11 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="owl-carousel testimonial-carousel">
-                        <div class="text-center">
+                        <div class="text-center"  th:each="services : ${service}">
                             <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                            <h4 class="font-weight-light mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</h4>
-                            <img class="img-fluid mx-auto mb-3" src="img/testimonial-1.jpg" alt="">
-                            <h5 class="font-weight-bold m-0">Client Name</h5>
-                            <span>Profession</span>
-                        </div>
-                        <div class="text-center">
-                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                            <h4 class="font-weight-light mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</h4>
-                            <img class="img-fluid mx-auto mb-3" src="img/testimonial-2.jpg" alt="">
-                            <h5 class="font-weight-bold m-0">Client Name</h5>
-                            <span>Profession</span>
-                        </div>
-                        <div class="text-center">
-                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                            <h4 class="font-weight-light mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</h4>
-                            <img class="img-fluid mx-auto mb-3" src="img/testimonial-3.jpg" alt="">
-                            <h5 class="font-weight-bold m-0">Client Name</h5>
+                            <h4 class="font-weight-light mb-4" th:text="${services.client_say}"></h4>
+                            <img class="img-fluid mx-auto mb-3" th:src="${services.image}" alt="">
+                            <h5 class="font-weight-bold m-0" th:text="${services.client_name}"></h5>
                             <span>Profession</span>
                         </div>
                     </div>
@@ -569,9 +436,9 @@
 
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
+    <script th:src="@{/https://code.jquery.com/jquery-3.4.1.min.js}"></script>
+    <script th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{/lib/easing/easing.min.js}"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/isotope/isotope.pkgd.min.js"></script>

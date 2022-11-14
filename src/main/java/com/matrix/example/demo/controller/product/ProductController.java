@@ -15,7 +15,7 @@ public class ProductController {
     }
 
 
-    @GetMapping
+    @GetMapping("/products")
     public String showProducts(Model model) {
         model.addAttribute("products", productService.getProducts());
 
@@ -25,5 +25,11 @@ public class ProductController {
     public String contact() {
         return "contact";
 
+    }
+    @GetMapping("/index")
+    public String index(Model model) {
+        model.addAttribute("indexProducts", productService.getProducts());
+
+        return "index";
     }
 }

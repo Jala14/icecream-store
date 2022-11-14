@@ -1,0 +1,12 @@
+insert into gallary(ice_cream_type,ice_cream_image)values('All','img/portfolio-1.jpg');
+insert into gallary(ice_cream_type,ice_cream_image)values('All','img/portfolio-2.jpg');
+insert into gallary(ice_cream_type,ice_cream_image)values('All','img/portfolio-3.jpg');
+insert into gallary(ice_cream_type,ice_cream_image)values('All','img/portfolio-4.jpg');
+insert into gallary(ice_cream_type,ice_cream_image)values('All','img/portfolio-5.jpg');
+insert into gallary(ice_cream_type,ice_cream_image)values('All','img/portfolio-6.jpg');
+insert into gallary(ice_cream_type,ice_cream_image)values('Cone','img/portfolio-1.jpg');
+insert into gallary(ice_cream_type,ice_cream_image)values('Cone','img/portfolio-4.jpg');
+insert into gallary(ice_cream_type,ice_cream_image)values('Vanilla','img/portfolio-2.jpg');
+insert into gallary(ice_cream_type,ice_cream_image)values('Vanilla','img/portfolio-5.jpg');
+insert into gallary(ice_cream_type,ice_cream_image)values('Chocolate','img/portfolio-3.jpg');
+insert into gallary(ice_cream_type,ice_cream_image)values('Chocolate','img/portfolio-6.jpg');
