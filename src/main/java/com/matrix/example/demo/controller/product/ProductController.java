@@ -37,7 +37,7 @@ public class ProductController {
     public String index(Model model) {
         model.addAttribute("products", productService.getProducts());
         model.addAttribute("parameter", aboutService.getAboutParameters());
-        model.addAttribute("service",serviceService.getServiceParametr());
+        model.addAttribute("service",serviceService.getServiceParameters());
         model.addAttribute("gallery",gallaryService.getGaleryParameters());
 
         return "index";

@@ -15,7 +15,7 @@ public class ServiceController {
     }
     @GetMapping("/service")
     public String title(Model model){
-        model.addAttribute("service",serviceService.getServiceParametr());
+        model.addAttribute("service",serviceService.getServiceParameters());
         return "service";
     }
 }

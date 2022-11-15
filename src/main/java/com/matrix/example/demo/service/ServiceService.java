@@ -18,10 +18,8 @@ public class ServiceService {
     public ServiceService(ServiceRepository serviceRepository) {
         this.serviceRepository = serviceRepository;
     }
-    public List<ServiceDto> getServiceParametr(){
-        var productEntityList = serviceRepository.findAll(
-
-        );
+    public List<ServiceDto> getServiceParameters() {
+        var productEntityList = serviceRepository.findAll();
 
         return  productEntityList.parallelStream()
                 .map(ServiceMapper.INSTANCE::serviceToDto)
