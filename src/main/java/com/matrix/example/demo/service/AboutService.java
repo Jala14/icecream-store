@@ -3,10 +3,7 @@ package com.matrix.example.demo.service;
 
 import com.matrix.example.demo.dao.repository.AboutRepository;
 import com.matrix.example.demo.mapper.AboutMapper;
-import com.matrix.example.demo.mapper.ProductMapper;
 import com.matrix.example.demo.model.AboutDto;
-import com.matrix.example.demo.model.ProductDto;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,10 +16,8 @@ public class AboutService {
         this.aboutRepository = aboutRepository;
     }
 
-    public List<AboutDto> getAboutParametr() {
-        var productEntityList = aboutRepository.findAll(
-                Sort.by(Sort.Direction.DESC, "price")
-        );
+    public List<AboutDto> getAboutParameters() {
+        var productEntityList = aboutRepository.findAll();
 
         return  productEntityList.parallelStream()
                 .map(AboutMapper.INSTANCE::aboutToDto)

@@ -1,17 +1,24 @@
 package com.matrix.example.demo.controller.product;
 
-import com.matrix.example.demo.service.ProductService;
+import com.matrix.example.demo.service.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class ProductController {
+    private final AboutService aboutService;
     private final ProductService productService;
+    private final ServiceService serviceService;
+    private final GallaryService gallaryService;
 
-    public ProductController(ProductService productService) {
+
+    public ProductController(AboutService aboutService, ProductService productService, ServiceService serviceService,GallaryService gallaryService) {
+        this.aboutService = aboutService;
         this.productService = productService;
+        this.serviceService = serviceService;
+        this.gallaryService=gallaryService;
+
     }
 
 
@@ -28,7 +35,10 @@ public class ProductController {
     }
     @GetMapping("/index")
     public String index(Model model) {
-        model.addAttribute("indexProducts", productService.getProducts());
+        model.addAttribute("products", productService.getProducts());
+        model.addAttribute("parameter", aboutService.getAboutParameters());
+        model.addAttribute("service",serviceService.getServiceParametr());
+        model.addAttribute("gallery",gallaryService.getGaleryParameters());
 
         return "index";
     }

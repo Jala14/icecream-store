@@ -14,7 +14,7 @@ public class AboutController {
     }
     @GetMapping("/about")
     public String title(Model model) {
-        model.addAttribute("parameter", aboutService.getAboutParametr());
+        model.addAttribute("parameter", aboutService.getAboutParameters());
         return "about";
 
     }

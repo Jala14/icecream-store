@@ -1,40 +1,29 @@
 package com.matrix.example.demo.model;
 
-import com.matrix.example.demo.enums.IceCreamCategory;
 
 public class GallaryDto {
-    private IceCreamCategory icecreamType;
-    private String icecreamImage;
+
+    private String image;
 
     public GallaryDto() {
     }
 
-    public GallaryDto(IceCreamCategory icecreamType, String icecreamImage) {
-        this.icecreamType = icecreamType;
-        this.icecreamImage = icecreamImage;
+    public GallaryDto(String image) {
+        this.image = image;
     }
 
-    public IceCreamCategory getIcecreamType() {
-        return icecreamType;
+    public String getImage() {
+        return image;
     }
 
-    public void setIcecreamType(IceCreamCategory icecreamType) {
-        this.icecreamType = icecreamType;
-    }
-
-    public String getIcecreamImage() {
-        return icecreamImage;
-    }
-
-    public void setIcecreamImage(String icecreamImage) {
-        this.icecreamImage = icecreamImage;
+    public void setImage(String image) {
+        this.image = image;
     }
 
     @Override
     public String toString() {
         return "GallaryDto{" +
-                "icecreamType=" + icecreamType +
-                ", icecreamImage='" + icecreamImage + '\'' +
+                "image='" + image + '\'' +
                 '}';
     }
 }

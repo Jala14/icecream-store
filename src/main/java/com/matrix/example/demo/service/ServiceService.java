@@ -20,7 +20,7 @@ public class ServiceService {
     }
     public List<ServiceDto> getServiceParametr(){
         var productEntityList = serviceRepository.findAll(
-                Sort.by(Sort.Direction.DESC, "price")
+
         );
 
         return  productEntityList.parallelStream()

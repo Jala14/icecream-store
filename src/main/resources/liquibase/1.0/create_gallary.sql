@@ -1,9 +1,10 @@
-create table gallary
+create table gallery
 (
-    id              serial
-        constraint gallary_pk
+    id    serial
+        constraint gallery_pk
             primary key,
-    ice_cream_type  varchar,
-    ice_cream_image varchar
+    image varchar
 );
+
+
 
