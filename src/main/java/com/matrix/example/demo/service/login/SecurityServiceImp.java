@@ -20,7 +20,7 @@
 //    @Autowired
 //    private UserService userService;
 //
-//    @Autowired
+//    @Autowired(required = false)
 //    private AuthenticationManager authenticationManager;
 //
 //    @Override

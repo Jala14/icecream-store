@@ -40,6 +40,7 @@ public class ProductController {
         model.addAttribute("service",serviceService.getServiceParameters());
         model.addAttribute("gallery",gallaryService.getGaleryParameters());
 
+
         return "index";
     }
 }

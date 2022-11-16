@@ -25,4 +25,11 @@ public class ServiceService {
                 .map(ServiceMapper.INSTANCE::serviceToDto)
                 .toList();
     }
+    public List<ServiceDto> getServiceParameter() {
+        var productEntityList = serviceRepository.findAll();
+
+        return  productEntityList.parallelStream()
+                .map(ServiceMapper.INSTANCE::serviceToDto)
+                .toList();
+    }
 }

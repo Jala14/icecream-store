@@ -5,18 +5,20 @@ public class AboutDto {
     private String title;
     private String text;
     private String chefName;
+    private String chefImage;
     private String designation;
 
     public AboutDto() {
 
     }
 
-    public AboutDto(Integer id, String title, String text,String chefName,String designation) {
+    public AboutDto(Integer id, String title, String text, String chefName, String chefImage, String designation) {
         this.id = id;
         this.title = title;
         this.text = text;
-        this.chefName=chefName;
-        this.designation=designation;
+        this.chefName = chefName;
+        this.chefImage = chefImage;
+        this.designation = designation;
     }
 
     public Integer getId() {
@@ -51,6 +53,14 @@ public class AboutDto {
         this.chefName = chefName;
     }
 
+    public String getChefImage() {
+        return chefImage;
+    }
+
+    public void setChefImage(String chefImage) {
+        this.chefImage = chefImage;
+    }
+
     public String getDesignation() {
         return designation;
     }
@@ -66,6 +76,7 @@ public class AboutDto {
                 ", title='" + title + '\'' +
                 ", text='" + text + '\'' +
                 ", chefName='" + chefName + '\'' +
+                ", chefImage='" + chefImage + '\'' +
                 ", designation='" + designation + '\'' +
                 '}';
     }

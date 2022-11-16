@@ -309,20 +309,20 @@
                 <div class="col-12">
                     <div class="owl-carousel team-carousel">
 
-<!--                        <div class="team-item"  th:each="params : ${parameter}">-->
-<!--                            <div class="team-img mx-auto">-->
-<!--                                <img class="rounded-circle w-100 h-100" th:src="${params.chef_image}" style="object-fit: cover;">-->
-<!--                            </div>-->
-<!--                            <div class="position-relative text-center bg-light rounded px-4 py-5" style="margin-top: -100px;">-->
-<!--                                <h3 class="font-weight-bold mt-5 mb-3 pt-5" th:text="${params.chef_name}"></h3>-->
-<!--                                <h6 class="text-uppercase text-muted mb-4"  th:text="${params.designation}"></h6>-->
-<!--                                <div class="d-flex justify-content-center pt-1">-->
-<!--                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>-->
-<!--                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>-->
-<!--                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
+                        <div class="team-item"  th:each="parameters : ${parameter}">
+                            <div class="team-img mx-auto">
+                                <img class="rounded-circle w-100 h-100" th:src="${parameters.chef_image}" style="object-fit: cover;">
+                            </div>
+                            <div class="position-relative text-center bg-light rounded px-4 py-5" style="margin-top: -100px;">
+                                <h3 class="font-weight-bold mt-5 mb-3 pt-5" th:text="${parameters.chef_name}"></h3>
+                                <h6 class="text-uppercase text-muted mb-4"  th:text="${parameters.designation}"></h6>
+                                <div class="d-flex justify-content-center pt-1">
+                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

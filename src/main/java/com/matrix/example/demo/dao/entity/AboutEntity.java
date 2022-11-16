@@ -10,23 +10,29 @@ public class AboutEntity {
     private Integer id;
     @Column(name = "title")
     private String title;
-    @Column(name="text")
+    @Column(name = "text")
     private String text;
-    @Column(name="chef_name")
+    @Column(name = "chef_name")
     private String chefName;
-    @Column(name="designation")
+    @Column(name = "chef_image")
+    private String chefImage;
+    @Column(name = "designation")
     private String designation;
 
-    public AboutEntity(Integer id, String title, String text,String chefName,String designation) {
-        this.id = id;
-        this.title = title;
-        this.text = text;
-        this.chefName=chefName;
-        this.designation=designation;
-    }
+
     public AboutEntity() {
 
     }
+
+    public AboutEntity(Integer id, String title, String text, String chefName, String chefImage, String designation) {
+        this.id = id;
+        this.title = title;
+        this.text = text;
+        this.chefName = chefName;
+        this.chefImage = chefImage;
+        this.designation = designation;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -59,6 +65,14 @@ public class AboutEntity {
         this.chefName = chefName;
     }
 
+    public String getChefImage() {
+        return chefImage;
+    }
+
+    public void setChefImage(String chefImage) {
+        this.chefImage = chefImage;
+    }
+
     public String getDesignation() {
         return designation;
     }
@@ -66,6 +80,16 @@ public class AboutEntity {
     public void setDesignation(String designation) {
         this.designation = designation;
     }
+
+    @Override
+    public String toString() {
+        return "AboutEntity{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", text='" + text + '\'' +
+                ", chefName='" + chefName + '\'' +
+                ", chefImage='" + chefImage + '\'' +
+                ", designation='" + designation + '\'' +
+                '}';
+    }
 }
-
-

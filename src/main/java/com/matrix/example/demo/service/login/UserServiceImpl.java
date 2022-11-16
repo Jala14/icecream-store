@@ -26,7 +26,7 @@
 //    @Autowired
 //    private RoleRepository roleRepository;
 //
-//    @Autowired
+//    @Autowired(required = false)
 //    private BCryptPasswordEncoder bCryptPasswordEncoder;
 //
 //    @Override

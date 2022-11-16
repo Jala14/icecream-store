@@ -33,6 +33,9 @@ public class ProductService {
     public List<ProductEntity> findAll() {
         return productRepository.findAll();
     }
+    public ProductEntity findById(Integer id) {
+        return productRepository.findById(id).get();
+    }
     public List<ProductDto> getProductParametr() {
         return productRepository.findAll()
                 .stream()
