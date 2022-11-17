@@ -154,11 +154,11 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="owl-carousel testimonial-carousel">
-                        <div class="text-center"  th:each="services :${servis}">
+                        <div class="text-center"  th:each="services :${service}">
                             <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                            <h4 class="font-weight-light mb-4"th:text="${services.client_say}"/>
-                            <img class="img-fluid mx-auto mb-3" th:src="${services.client_image}" alt="">
-                            <h5 class="font-weight-bold m-0"th:text="${services.client_name}"/>
+                            <h4 class="font-weight-light mb-4"th:text="${services.clientSay}"/>
+                            <img class="img-fluid mx-auto mb-3" th:src="${services.clientImage}" alt="">
+                            <h5 class="font-weight-bold m-0"th:text="${services.clientName}"/>
                             <span>Profession</span>
                         </div>
 
