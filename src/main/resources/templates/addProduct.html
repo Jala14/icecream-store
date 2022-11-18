@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Add page</title>
+    <link th:href="@{/css/adminPage.css}" rel="stylesheet" type="text/css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1 class="logo">ICECREAM</h1>
+        <h5>for managers</h5>
+    </div>
+
+    <div class="product">
+        <h5>Add new Product</h5>
+        <br>
+                <form th:action="@{saveProduct}" method="post">
+<!--        <form method="post" autocomplete="off">-->
+
+            <input type="text" name="id" placeholder="Product id"> ID</input><br>
+            <br>
+            <input type="text" name="icecream-name" placeholder="Product name"> Name</input><br>
+            <br>
+            <input type="number" name="icecream-price" placeholder="Product price"> Price</input><br>
+            <br>
+            <input type="text" name="icecream-currency" placeholder="Product currency">Currency</input><br>
+            <br>
+
+
+            <!--        <input type="text" name="image" placeholder="product image">Image</input><br>-->
+
+
+
+        </form>
+<!--                </form>-->
+
+
+
+        <!--        <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Type first name">-->
+        <!--            <input id="clothes-name" class="input100" type="text" name="clothes-name" placeholder="Name">-->
+        <!--            <span class="focus-input100"></span>-->
+        <!--        </div>-->
+        <!--        <div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Type last name">-->
+        <!--            <input id='clothes-price' class="input100" type="text" name="clothes-price" placeholder="Price">-->
+        <!--               <span class="focus-input100"></span>-->
+
+        <!--        </div>-->
+
+        <!--            <input id="clothes_category" class="input100" type="text" name="clothes_category" placeholder="Category">-->
+        <!--            <span class="focus-input100"></span>-->
+        <!--        </div>-->
+
+        <!--        <div class="wrap-input100">-->
+        <!--            <input id="description" class="input100" type="text" name="description" placeholder="description">-->
+        <!--            <span class="focus-input100"></span>-->
+        <!--        </div>-->
+
+                    <div class="container-contact100-form-btn" id="button">
+                        <button class="contact100-form-btn">
+                            Submit
+                        </button>
+                    </div>
+        <!--            &lt;!&ndash;            <button id="button" type="submit">Submit</button>&ndash;&gt;-->
+        <!--&lt;!&ndash;        </form>&ndash;&gt;-->
+            </div>
+
+
+
+</div>
+</div>
+</body>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'UA-23581568-13');
+
+    $(document).ready(function () {
+        $('#button').click(function () {
+            // alert("hiiii")
+
+            var name = $('#icecream-name').val()
+            alert(name)
+            var price = $('#icecream-price').val()
+            var price = $('#icecream-currency').val()
+
+
+            var data = {}
+            data.name = name
+            data.price = price
+            data.currency=currency
+            console.log(data)
+
+            $ajax({
+                type: "POST",
+                url: "http://localhost:8081/admin/saveProduct",
+                data: JSON.stringify(data),
+                success: true,
+                contentType: "application/json",
+                dataType: "json"
+            });
+
+        })
+    })
+</script>
+</html>

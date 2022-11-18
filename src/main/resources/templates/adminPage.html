@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=The+Nautigal:wght@700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<style>
+    .container {
+        margin-top: 20px;
+    }
+
+    .logo {
+        position: relative;
+        color: rgb(108, 34, 177);
+        text-decoration: none;
+        font-weight: 700;
+        font-family: 'Dancing Script', cursive;
+    }
+
+    .header {
+        margin: 20px;
+        text-align: center;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 10px;
+    }
+
+    .button:hover {
+        background-color: rgb(170, 8, 8);
+    }
+
+    a {
+        text-decoration: none;
+    }
+</style>
+<body>
+
+<div class="container" sec:authorize="hasRole('ROLE_ADMIN')">
+    <div class="header">
+        <h1 class="logo">ICECREAM</h1>
+        <h4>for managers</h4>
+    </div>
+    <table id="example" class="table table-bordered table-striped" style="width: 100%">
+        <thead>
+        <tr class=" table table-dark">
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <!--            <th>Image</th>-->
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="pr : ${product}">
+            <td th:text="${pr.id}"/>
+            <td th:text="${pr.getName()}"/>
+            <td th:text="${pr.getPrice()}"/>
+            <!--            <td><img class="adminProductImg" th:src="${pr.getClothesImg()}">-->
+            <!--            <td/>-->
+
+
+
+            <td class="buttons">
+                <a th:href="@{/admin/addproduct}">
+                    <button class="button btn-dark">Add</button>
+                </a>
+
+                <a th:href="${'/admin/editProduct/' + pr.id}">
+                    <button class="button btn-dark">Edit</button>
+                </a>
+
+                <a th:href="${'/admin/deleteProduct/' + pr.id}">
+                    <button class="button btn-dark" name="delete">Delete</button>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<!--<input name="name" id="name">Name</input>-->
+<!--<input name="price" id="price">Price</input>-->
+<!--<input name="currency" id="currency">Currency</input>-->
+
+<!--<button id="button">Submit</button>-->
+
+</body>
+<script>
+
+    $(#button).click(function (){
+        console.log("start")
+
+        var name=$("#name").val()
+        var price=$("#price").val()
+        var currency=$("#currency").val()
+
+        var data={}
+        data.name=name
+        data.price=price
+        data.currency=currency
+        console.log(data)
+
+        $ajax({
+            type:"POST",
+            url:"http://localhost:8081/main/product-save",
+            data:JSON.stringify(data),
+            success:true,
+            contentType:"application/json",
+            dataType:"json"
+        });
+
+    })
+</script>
+</html>
