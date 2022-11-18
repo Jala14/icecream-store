@@ -7,7 +7,6 @@ import org.mapstruct.factory.Mappers;
 
 
 @Mapper
-
 public interface GallaryMapper {
 
     GallaryMapper INSTANCE= Mappers.getMapper(GallaryMapper.class);

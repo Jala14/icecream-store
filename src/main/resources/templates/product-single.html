@@ -32,9 +32,9 @@
             <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center">
                     <span class="text-white">|</span>
-                    <a class="text-white px-3" th:href="@{/about}">Help</a>
+                    <a class="text-white px-3" th:href="@{/contact}">Help</a>
                     <span class="text-white">|</span>
-                    <a class="text-white pl-3" href="">Support</a>
+                    <a class="text-white pl-3" th:href="@{/contact}">Support</a>
                 </div>
             </div>
             <div class="col-md-6 text-center text-lg-right">
@@ -84,6 +84,8 @@
                     <a th:href="@{/service}" class="nav-item nav-link">Service</a>
                     <a th:href="@{/gallery}" class="nav-item nav-link">Gallery</a>
                     <a th:href="@{contact}" class="nav-item nav-link">Contact</a>
+                    <a th:href="@{/login}" class="nav-item nav-link">Account</a>
+
                 </div>
             </div>
         </nav>
@@ -100,7 +102,7 @@
 
         <div class="col-lg-6 col-md-12 col-12">
 
-            <h3 class="py-4" th:text="${productSingle.getName()}"/>
+            <h3 class="py-4"style="color:deeppink" th:text="${productSingle.getName()}"/>
             <h2 class="p-price" th:text="${productSingle.getPrice()+ productSingle.getCurrency()}"/>
             <select class="my-3" style="margin-right: 20px">
                 <option>Select Size</option>
@@ -115,12 +117,16 @@
             </a>
 
             <h4 class="mt-5 mb-5">Product Details</h4>
+            <h5 class="mt-5 mb-5" style="color:darkmagenta">Ice cream is a colloidal emulsion made with water, ice, milk fat, milk protein, sugar and air. Water and fat have the highest proportions by weight creating an emulsion that has dispersed phase as fat globules. The emulsion is turned into foam by incorporating air cells which are frozen to form dispersed ice cells.</h5>
 <!--            <span th:text="${product.getDescription()}"/>-->
 
 
         </div>
     </div>
 </section>
+
+
+
 
 
 

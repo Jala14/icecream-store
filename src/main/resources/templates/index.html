@@ -34,9 +34,9 @@
                 <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
                     <div class="d-inline-flex align-items-center">
                         <span class="text-white">|</span>
-                        <a class="text-white px-3" th:href="@{/about}">Help</a>
+                        <a class="text-white px-3" th:href="@{/contact}">Help</a>
                         <span class="text-white">|</span>
-                        <a class="text-white pl-3" href="">Support</a>
+                        <a class="text-white pl-3" th:href="@{/contact}">Support</a>
                     </div>
                 </div>
                 <div class="col-md-6 text-center text-lg-right">
@@ -86,7 +86,9 @@
                     <div class="navbar-nav mr-auto py-0">
                         <a th:href="@{/service}" class="nav-item nav-link">Service</a>
                         <a th:href="@{/gallery}" class="nav-item nav-link">Gallery</a>
-                        <a th:href="@{contact}" class="nav-item nav-link">Contact</a>
+                        <a th:href="@{/contact}" class="nav-item nav-link">Contact</a>
+                        <a th:href="@{/login}" class="nav-item nav-link">Account</a>
+
                     </div>
                 </div>
             </nav>
@@ -339,19 +341,19 @@
                     <h1 class="section-title position-relative text-center mb-5">Clients Say About Our Famous Ice Cream</h1>
                 </div>
             </div>
-<!--            <div class="row justify-content-center">-->
-<!--                <div class="col-lg-8">-->
-<!--                    <div class="owl-carousel testimonial-carousel" th:each="services : ${service}">-->
-<!--                        <div class="text-center" >-->
-<!--                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>-->
-<!--                            <h4 class="font-weight-light mb-4" th:text="${services.client_say}"></h4>-->
-<!--                            <img class="img-fluid mx-auto mb-3" th:src="${services.image}" alt="">-->
-<!--                            <h5 class="font-weight-bold m-0" th:text="${services.client_name}"></h5>-->
-<!--                            <span>Profession</span>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="owl-carousel testimonial-carousel" >
+                        <div class="text-center"  th:each="services :${service}">
+                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                            <h4 class="font-weight-light mb-4"th:text="${services.clientSay}"/>
+                            <img class="img-fluid mx-auto mb-3" th:src="${services.clientImage}" alt="">
+                            <h5 class="font-weight-bold m-0"th:text="${services.clientName}"/>
+                            <span>Profession</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Testimonial End -->

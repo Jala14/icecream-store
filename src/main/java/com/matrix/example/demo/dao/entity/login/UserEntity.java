@@ -9,7 +9,7 @@ public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "user_name")
+    @Column(name = "username")
     private String username;
     @Column(name = "password")
     private String password;
@@ -17,20 +17,22 @@ public class UserEntity {
     private String email;
 
     @ManyToMany
-    @JoinTable(
-            schema = "public",name = "users_roles",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id"))
+//    @JoinTable(
+//            schema = "public",name = "users_roles",
+//            joinColumns = @JoinColumn(name = "user_id"),
+//            inverseJoinColumns = @JoinColumn(name = "role_id"))
     private List<RoleEntity> roles;
-    public UserEntity(){
 
-    }
 
     public UserEntity(Integer id, String username, String password, String email) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.email = email;
+    }
+
+    public UserEntity(){
+
     }
 
     public Integer getId() {
