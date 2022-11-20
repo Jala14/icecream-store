@@ -93,8 +93,6 @@
 </div>
 <!-- Navbar End -->
 
-
-
 <div class="main">
     <input type="checkbox" id="chk" aria-hidden="true">
     <div class="signup">
@@ -104,7 +102,7 @@
             <div>
                 <input id="username" type="text" th:field="*{username}" placeholder="Username" autofocus="true">
 
-<!--                <span class="has-error" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span>-->
+                <!--                <span class="has-error" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span>-->
                 <span class="has-error" th:if="${#fields.hasErrors('username')}">
                     Sorry... username already taken</span>
             </div>
@@ -113,7 +111,7 @@
 
             <div>
                 <input id="password" type="password" th:field="*{password}" placeholder="Password">
-<!--                <span class="has-error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>-->
+                <!--                <span class="has-error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>-->
                 <span class="has-error" th:if="${#fields.hasErrors('password')}" >
                     Try one with at least 6 characters.
                 </span>
