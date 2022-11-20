@@ -44,7 +44,7 @@ public class UserServiceImpl implements UserService {
         user.setEmail(userDto.getEmail());
 
         // give user default role of "employee"
-       user.setRoles(Arrays.asList(roleRepository.findByRoleName("ROLE_USER")));
+        user.setRoles(Arrays.asList(roleRepository.findByRoleName("ROLE_USER")));
 
         // save user in the database
         userRepository.save(user);

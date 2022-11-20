@@ -9,7 +9,7 @@ public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "username")
+    @Column(name = "user_name")
     private String username;
     @Column(name = "password")
     private String password;
@@ -20,7 +20,7 @@ public class UserEntity {
     @JoinTable(
             schema = "public",name = "users_roles",
             joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "roles_id"))
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
 
     private List<RoleEntity> roles;
 
