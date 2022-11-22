@@ -30,6 +30,7 @@ public class ProductController {
     public String showProducts(Model model) {
         model.addAttribute("products", productService.getProducts());
 
+
         return "product";
     }
     @GetMapping("/contact")

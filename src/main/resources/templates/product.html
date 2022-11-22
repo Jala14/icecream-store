@@ -57,6 +57,8 @@
                     <a class="text-white pl-3" th:href="@{https://www.youtube.com/}">
                         <i class="fab fa-youtube"></i>
                     </a>
+                    <a  style="color: #0d0d0d" th:href="@{/login}"  class="nav-item nav-link " >Login</a>
+                    <a  style="color: #0d0d0d" th:href="@{/logout}" class="nav-item nav-link">Logout</a>
                 </div>
             </div>
         </div>
@@ -131,6 +133,9 @@
                     </div>
                     <h5 class="font-weight-bold mb-4" th:text="${product.name}" />
                     <a th:href="@{/productSingle/{id}(id=${product.id})}" class="btn btn-sm btn-secondary">Order Now</a>
+                    <a th:href="${'/cart/buy/'+ product.id}">
+                        <button class="btn btn-dark">Add To Cart</button>
+                    </a>
                 </div>
             </div>
 

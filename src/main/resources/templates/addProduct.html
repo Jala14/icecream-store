@@ -62,9 +62,9 @@
         <!--            <span class="focus-input100"></span>-->
         <!--        </div>-->
 
-                    <div class="container-contact100-form-btn" id="button">
-                        <button class="contact100-form-btn">
-                            Submit
+                    <div class="container-contact100-form-btn" >
+                        <button id="button" class="contact100-form-btn">
+
                         </button>
                     </div>
         <!--            &lt;!&ndash;            <button id="button" type="submit">Submit</button>&ndash;&gt;-->
@@ -104,7 +104,7 @@
             console.log(data)
 
             $ajax({
-                type: "POST",
+                type: "post",
                 url: "http://localhost:8081/admin/saveProduct",
                 data: JSON.stringify(data),
                 success: true,
