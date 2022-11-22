@@ -24,6 +24,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link th:href="@{/css/style.css}" rel="stylesheet">
+
 </head>
 <body>
 <div class="container-fluid bg-primary py-3 d-none d-md-block">
@@ -110,7 +111,7 @@
                 <option>Medium</option>
                 <option>Small</option>
             </select>
-            <input type="number" id="quantity" name="quantity" min="0" value="1">
+<!--            <input type="number" id="quantity" name="quantity" min="0" value="1">-->
 
             <a th:href="${'/cart/buy/'+ productSingle.getId()}">
                 <button class="btn btn-dark">Add To Cart</button>

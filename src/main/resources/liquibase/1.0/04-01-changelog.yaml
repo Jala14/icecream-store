@@ -1,7 +1,7 @@
 databaseChangeLog:
   - changeSet:
       id: Contact table
-      author: Nihad
+      author: Jala
       changes:
         - createTable:
             tableName: contact

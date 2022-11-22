@@ -31,7 +31,7 @@ class WebSecurityConfig  extends WebSecurityConfigurerAdapter {
                 .antMatchers("/css/**", "/js/**", "/img/**", "/index", "/about", "/addProduct", "/product", "/gallery",
                         "/registration", "/contact**", "/product/{productId}/").permitAll()
 
-                .antMatchers("/index", "/cart/checkout/**").hasRole("USER")
+                .antMatchers("/welcome", "/cart/checkout/**").hasRole("USER")
 
                 .antMatchers("/admin", "/admin/**", "/editProduct/{id}", "/saveProduct",
                         "/deleteProduct/{id}", "/addproduct", "/forAdmin").hasRole("ADMIN")
