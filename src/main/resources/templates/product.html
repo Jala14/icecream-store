@@ -113,17 +113,31 @@
 </div>
 <!-- Header End -->
 
+<div style="padding-left: 45%">
+    <select style="background-color: hotpink;border-color: pink" id="filter-product" class="btn btn-info" required >
+        <option value="" >Filter Ice creams</option>
+        <option  value="Vanilla" >Vanilla</option>
+        <option  value="Strawberry" >Strawberry </option>
+        <option  value="Soft serve" >Soft serve</option>
+        <option  value="Simple">Simple</option>
+        <option  value="Chocolate" >Chocolate</option>
+        <option  value="Coconut " >Coconut </option>
+        <option  value="Cartoon " >Cartoon </option>
 
+    </select>
+</div>
 <!-- Products Start -->
 <div class="container-fluid py-5">
+
     <div class="container py-5">
+
         <div class="row justify-content-center">
             <div class="col-lg-6">
                 <h1 class="section-title position-relative text-center mb-5">Best Prices We Offer For Ice Cream Lovers</h1>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-3 col-md-6 mb-4 pb-2" th:each="product : ${products}">
+            <div class="col-lg-3 col-md-6 mb-4 pb-2" th:each="product : ${products}" id="products-all">
                 <div class="product-item d-flex flex-column align-items-center text-center bg-light rounded py-5 px-3">
                     <div class="bg-primary mt-n5 py-3" style="width: 80px;">
                         <h4 class="font-weight-bold text-white mb-0" th:text="${product.currency + product.price}" />
@@ -187,6 +201,39 @@
 
 <!-- Back to Top -->
 <a href="#" class="btn btn-secondary px-2 back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+
+<script>
+    document.querySelector('#filter-product').
+    addEventListener('input',filterList)
+    function filterList(){
+        const searchInput = document.querySelector('#filter-product');
+        const filter = searchInput.value.toLowerCase();
+        const listItems = document.querySelectorAll('#products-all');
+
+        listItems.forEach((item) =>{
+
+                let text = item.textContent;
+                if(text.toLowerCase().includes(filter.toLowerCase())){
+                    item.style.display = '';
+
+
+
+
+                }else {
+                    item.style.display = 'none';
+                }
+            }
+        );
+
+    }
+
+
+
+</script>
+
+
 
 <!-- JavaScript Libraries -->
 <script th:src="@{https://code.jquery.com/jquery-3.4.1.min.js}"></script>

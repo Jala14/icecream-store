@@ -2,15 +2,14 @@ package com.matrix.example.demo.controller;
 
 
 import com.matrix.example.demo.dao.entity.ProductEntity;
+import com.matrix.example.demo.model.ProductDto;
 import com.matrix.example.demo.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
 import java.util.List;
 
 @Controller
@@ -57,5 +56,33 @@ public class AdminPageController {
         productService.deleteProduct(id);
         return "redirect:/admin";
     }
+
+
+
+
+
+
+
+
+
+
+    @GetMapping("/product-add")
+    public String propertyAdd(Model model) {
+        var properties = productService.getProductParametr();
+        model.addAttribute("products", properties);
+        model.addAttribute("productsS", new ProductDto());
+
+        return "/addProduct";
+    }
+
+
+    @PostMapping("/save")
+    public String save(@ModelAttribute("productsS") ProductDto productDto) throws ParseException {
+
+
+        productService.saveProducts2(productDto);
+        return "redirect:/admin/product-add";
+    }
+
 
 }

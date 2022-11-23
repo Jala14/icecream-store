@@ -7,6 +7,7 @@ import com.matrix.example.demo.model.ProductDto;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -55,5 +56,10 @@ public class ProductService {
     }
 
 
+    public void saveProducts2(ProductDto propertyDto) throws ParseException {
 
+
+        var productdetails=ProductMapper.INSTANCE.mapToEntity(propertyDto);
+        productRepository.save(productdetails);
+    }
 }
