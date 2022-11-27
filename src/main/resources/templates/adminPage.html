@@ -57,6 +57,9 @@
             <th>ID</th>
             <th>Name</th>
             <th>Price</th>
+            <th>Image</th>
+            <th>Currency</th>
+
             <!--            <th>Image</th>-->
         </tr>
         </thead>
@@ -65,6 +68,10 @@
             <td th:text="${pr.id}"/>
             <td th:text="${pr.getName()}"/>
             <td th:text="${pr.getPrice()}"/>
+            <td th:text="${pr.getImage()}"/>
+            <td th:text="${pr.getCurrency()}"/>
+
+
             <!--            <td><img class="adminProductImg" th:src="${pr.getClothesImg()}">-->
             <!--            <td/>-->
 
@@ -104,11 +111,13 @@
         var name=$("#name").val()
         var price=$("#price").val()
         var currency=$("#currency").val()
+        var image=$("#image").val()
 
         var data={}
         data.name=name
         data.price=price
         data.currency=currency
+        data.image=image
         console.log(data)
 
         $ajax({

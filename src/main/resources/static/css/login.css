@@ -95,7 +95,7 @@ body {
     align-items: center;
     min-height: 100vh;
     font-family: 'Jost', sans-serif;
-    background: linear-gradient(to bottom, #393468, #272357, #24243e);
+    background: linear-gradient(to bottom, #e22ba8, #d91667, #fffdfa);
 }
 
 .main {
